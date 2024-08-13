@@ -45,5 +45,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: frontend.zip
-          path: dist/frontend.zip
+          name: frontend
+          path: dist
