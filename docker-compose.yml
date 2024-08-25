@@ -1,0 +1,16 @@
+services:
+  mqtt-broker:
+    image: ghcr.io/bmappi/mqtt:main
+    hostname: vmq-mqtt
+    ports:
+      - 1883:1883
+      - 8883:8883
+      - 8888:8888
+      - 9800:9800
+      - 3001:3001
+    volumes:
+      - ./docker/conf/vernemq.conf:/etc/vernemq/conf.d/vernemq.conf
+      - ./docker/start_vernemq:/usr/sbin/start_vernemq
+      # - ./dist:/vernemq/lib/vmq_web_ui-2.0.1/priv/www
+    command: bash /usr/sbin/start_vernemq
+      
